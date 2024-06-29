@@ -5,10 +5,7 @@ import com.vemser.correcao.data.factory.CadastroFactory;
 import com.vemser.correcao.page.CadastroPage;
 import com.vemser.correcao.page.HomePage;
 import com.vemser.correcao.page.IdentificacaoPage;
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.*;
 
 public class CadastrarTest extends BaseTest{
     HomePage homePage = new HomePage();
@@ -16,7 +13,7 @@ public class CadastrarTest extends BaseTest{
     CadastroPage cadastroPage = new CadastroPage();
 
     @Test
-    public void testCadastrar() {
+    public void testCadastrar(){
         CadastroFactory cadastroFactory = new CadastroFactory();
         CadastroDto cadastroDto = cadastroFactory.cadastroValido();
         homePage.clicarCadastrarBtn();
@@ -24,5 +21,9 @@ public class CadastrarTest extends BaseTest{
         identificacaoPage.clicarContinuarBtn();
         cadastroPage.preencherFormulario(cadastroDto);
         cadastroPage.avancarPagina();
+        String dados[] = homePage.lerDadosUsuariosLogado().split("");
+        Assertions.assertTrue(cadastroDto.getNomeCompleto().contains(dados[0]));
     }
+
+
 }

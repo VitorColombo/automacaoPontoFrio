@@ -23,7 +23,6 @@
         <maven.surefire.plugin>3.0.0-M3</maven.surefire.plugin>
         <aspectj.version>1.9.21</aspectj.version>
 
-
     </properties>
     <dependencies>
 

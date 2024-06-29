@@ -17,7 +17,7 @@ public class BasePage extends Elementos {
         elemento(by).click();
     }
     protected static String lerTexto(By by){
-        esperarElemento(by);
+        esperarElementoSerLegivel(by);
         return elemento(by).getText();
     }
 

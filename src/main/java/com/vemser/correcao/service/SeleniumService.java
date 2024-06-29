@@ -17,6 +17,9 @@ public class SeleniumService {
 
     public void initBrowser() {
         ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-blink-features=AutomationControlled");
+        options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
+        options.setExperimentalOption("useAutomationExtension", false);
 
         switch (Manipulation.getProps().getProperty("BrowserType")) {
             case "firefox":

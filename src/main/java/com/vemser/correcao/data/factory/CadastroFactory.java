@@ -11,11 +11,12 @@ public class CadastroFactory {
 
     public CadastroDto cadastroValido() {
         CadastroDto cadastroDto = new CadastroDto();
-        cadastroDto.setCelular(faker.phoneNumber().cellPhone());
+        cadastroDto.setNomeCompleto(faker.name().firstName() + " " + faker.name().lastName());
+        cadastroDto.setCelular("51991087557");
         cadastroDto.setCpf(CPFUtil.gerarCPF());
         cadastroDto.setEmail(faker.internet().emailAddress());
-        cadastroDto.setDataNascimento(faker.date().birthday().toString());
-        cadastroDto.setSenha(faker.internet().password());
+        cadastroDto.setDataNascimento("20061996");
+        cadastroDto.setSenha(faker.internet().password().substring(0,8));
 
         return cadastroDto;
     }
