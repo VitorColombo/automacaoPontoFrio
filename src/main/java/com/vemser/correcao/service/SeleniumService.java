@@ -36,7 +36,7 @@ public class SeleniumService {
                 break;
             default:
                 driver = new ChromeDriver(options);
-                wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+                wait = new WebDriverWait(driver, Duration.ofSeconds(100));
                 driver.get(Manipulation.getProps().getProperty("AppURL"));
                 driver.manage().window().maximize();
                 break;

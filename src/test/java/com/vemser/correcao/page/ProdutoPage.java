@@ -29,7 +29,9 @@ public class ProdutoPage extends BasePage{
         clicar(btnComprar);
     }
     public void selecionarVoltagem(){
-        clicar(voltagem);
+        if (elementoExiste(voltagem)){
+            clicar(voltagem);
+        }
     }
 }
 

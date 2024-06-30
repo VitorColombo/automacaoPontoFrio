@@ -21,9 +21,7 @@ public class CadastrarTest extends BaseTest{
         identificacaoPage.clicarContinuarBtn();
         cadastroPage.preencherFormulario(cadastroDto);
         cadastroPage.avancarPagina();
-        String dados[] = homePage.lerDadosUsuariosLogado().split("");
-        Assertions.assertTrue(cadastroDto.getNomeCompleto().contains(dados[0]));
+        String dadosNome = homePage.lerDadosUsuariosLogado().split(" ")[1];
+        Assertions.assertTrue(cadastroDto.getNomeCompleto().contains(dadosNome));
     }
-
-
 }
